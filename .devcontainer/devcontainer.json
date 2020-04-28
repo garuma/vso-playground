@@ -1,0 +1,20 @@
+{
+  "name": "Xamarin.Android Linux",
+  "image": "garuma/playground:xamarin-android-ubuntu",
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": ["ms-dotnettools.csharp"],
+
+  // Expose the VNC port to us
+  "forwardPorts": [5901],
+
+  "remoteUser": "vscode",
+
+  // Ensure we can run Android emulator accelerated
+  "runArgs": ["--privileged", "-v /dev:/dev"]
+}
